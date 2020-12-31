@@ -4,7 +4,10 @@ import java.util.List;
 
 class Main {
   public static void main(String[] args) {
-    
+    HashMap obj = new HashMap();
+    obj.put(1,3);
+    int param_2 = obj.get(1);
+    obj.remove(param_2);
   }
 }
 
