@@ -1,36 +1,12 @@
-class HashMap {
-  private int range;
-  private List<Bucket> hashMap;
+import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
-  public HashMap() {
-    this.range = 2069;
-    this.hashMap = new ArrayList<Bucket>();
-
-    for (int i = 0; i < this.range; ++i) {
-      this.hashMap.add(new Bucket());
-    }
-
-  }
-
-  public void put(int key, int value) {
-    int hashIndex = key % this.range;
-    this.hashMap.get(hashIndex).update(key, value);
-
-  }
-
-  public void get(int key) {
-    int hashIndex = key % this.range;
-    return this.hashMap.get(hashIndex).get(key);
-
-  }
-
-  public void remove(int key) {
-    int hashIndex = key % this.range;
-    this.hashMap.get(hashIndex).remove(key);
-
+class Main {
+  public static void main(String[] args) {
+    
   }
 }
-
 
 class Pair<U, V> {
   public U first;
@@ -86,5 +62,37 @@ class Bucket {
     }
 
   }
+}
 
+class HashMap {
+  private int range;
+  private List<Bucket> hashMap;
+
+  public HashMap() {
+    this.range = 2069;
+    this.hashMap = new ArrayList<Bucket>();
+
+    for (int i = 0; i < this.range; ++i) {
+      this.hashMap.add(new Bucket());
+    }
+
+  }
+
+  public void put(int key, int value) {
+    int hashIndex = key % this.range;
+    this.hashMap.get(hashIndex).update(key, value);
+
+  }
+
+  public int get(int key) {
+    int hashIndex = key % this.range;
+    return this.hashMap.get(hashIndex).get(key);
+
+  }
+
+  public void remove(int key) {
+    int hashIndex = key % this.range;
+    this.hashMap.get(hashIndex).remove(key);
+
+  }
 }
